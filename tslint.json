@@ -1,0 +1,20 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "eofline": false,
+    "no-trailing-whitespace": false,
+    "comment-format": false,
+    "quotemark": false,
+    "no-console": false,
+    "one-line": false,
+    "no-consecutive-blank-lines": false,
+    "curly": false,
+    "variable-name": false,
+    "object-literal-sort-keys": [false, "ignore-case", "match-declaration-order", "shorthand-first"]
+  },
+  "rulesDirectory": []
+}

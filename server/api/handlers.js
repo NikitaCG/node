@@ -34,12 +34,14 @@ const getTodo = (req, res) => {
 };
 
 const postTodo = (req, res) => {
-  const { body: {
-    id,
-    todo,
-    isDone,
-    hasAttachment,
-  } } = req;
+  const { 
+    body: {
+      id,
+      todo,
+      isDone,
+      hasAttachment,
+    }
+  } = req;
 
   if (id) {
     Todos.findByIdAndUpdate(id, {

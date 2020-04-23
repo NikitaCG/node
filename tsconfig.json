@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "keyofStringsOnly": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "module": "es6",
+    "esModuleInterop": true,
+    "target": "es6",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "watch": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": [
+        "./Components/*"
+      ]
+    },
+  },
+  "include": ["./src", "declaration.d.ts"]
+}
