@@ -19,7 +19,12 @@ const getTodos = (req, res) => {
   Todos.find({username: params.username}, (err, todos) => {
     if (err) throw err;
 
-    res.send(todos);
+    const todosId = todos.map(todo => ({
+      id: todo.id,
+      todo: todo.todo,
+    }));
+
+    res.send(todosId);
   });
 };
 

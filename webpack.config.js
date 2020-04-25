@@ -22,7 +22,7 @@ module.exports = (env, options) => {
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".json", ".css"],
       alias: {
-        Components: path.resolve(__dirname, 'src/Components/'),
+        Containers: path.resolve(__dirname, 'src/Containers/'),
       }
     },
     module: {
@@ -54,9 +54,7 @@ module.exports = (env, options) => {
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                // only enable hot in development
-                hmr: false,
-                // if hmr does not work, this is a forceful method.
+                hmr: devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                 reloadAll: true,
               },
             },
@@ -64,9 +62,13 @@ module.exports = (env, options) => {
               loader: "css-loader",
               options: {
                 modules: true,
+                importLoaders: 1,
+                sourceMap: true,
+                minimize: true,
                 localIdentName: "[local]___[hash:base64:10]",
               },
             },
+            'postcss-loader'
           ],
         },
         {

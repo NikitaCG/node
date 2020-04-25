@@ -4,13 +4,15 @@ const mongoose = require('mongoose');
 const { getDbConnection } = require('../config');
 
 const api = require('./api');
+const { headers } = require('./middleware');
 
 const server = express();
 
 const PORT = process.env.PORT || 7000;
 
 server
-  .use(express.static(__dirname + '/public'));
+  .use(express.static(__dirname + '/public'))
+  .use(headers);
 
 mongoose.connect(getDbConnection(),
   {
@@ -26,5 +28,5 @@ dbConnection.on('open', () => console.log(`Connection to DB!`));
 api(server);
 
 server.listen(PORT, err => {
-    err ? console.log(err) : console.log('Server started!');
-  });
+  err ? console.log(err) : console.log('Server started!');
+});

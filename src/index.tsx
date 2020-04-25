@@ -35,8 +35,8 @@ if ((module).hot ){
     const NextRouting = require('./routes/index').default;
 
     ReactDOM.render(
-        <ProviderTemplate />
-        , document.getElementById('app'),
+      <ProviderTemplate />
+      , document.getElementById('app'),
     );
   });
 }

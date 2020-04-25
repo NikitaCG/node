@@ -14,8 +14,10 @@
       "dom"
     ],
     "watch": true,
+    "typeRoots": ["src/typings", "./node_modules/@types"],
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule":true,
     "allowJs": true,
     "baseUrl": "./src",
     "paths": {
