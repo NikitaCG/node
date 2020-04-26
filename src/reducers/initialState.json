@@ -1,4 +1,10 @@
 {
   "todosInfo": [],
-  "todo": {}
+  "todo": {
+    "id": "",
+    "username": "",
+    "todo": "",
+    "isDone": false,
+    "hasAttacment": false
+  }
 }

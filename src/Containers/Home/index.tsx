@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import { fetchTodos } from '../../actions/fetchTodos';
+import { fetchTodos } from 'actions/apiTodos';
 
 import TodoAddButton from './components/TodoAddButton';
 import TodoItem from './components/TodoItem';

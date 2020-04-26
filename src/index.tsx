@@ -1,5 +1,4 @@
-import {History} from 'history';
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory, History } from 'history';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -18,9 +17,7 @@ const store: Store = initStore(middleware);
 const ProviderTemplate: React.FC = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <>
-        {<Routing/>}
-      </>
+      <Routing/>
     </ConnectedRouter>
   </Provider>
 );

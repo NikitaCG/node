@@ -1,16 +1,25 @@
-import React, {Suspense} from 'react';
-import {Route} from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import Home from 'Containers/Home/index';
+const Home = React.lazy(() => import('Containers/Home/index'));
+const TodoPage = React.lazy(() => import('Containers/TodoPage'));
+
+const Fallback: React.ReactNode = <div>Loading...</div>;
 
 const Router: React.FC = () => (
-  <div>
-    <Route
-      exact
-      path="/"
-      component={Home}
-    />
-  </div>
+  <Suspense fallback={Fallback} >
+    <Switch>
+      <Route
+        exact
+        path="/"
+        component={() => <Home />}
+      />
+      <Route
+        path="/todo/:id"
+        component={(props: any) => <TodoPage {...props} />}
+      />
+    </Switch>
+  </Suspense>
 );
 
 export default Router;

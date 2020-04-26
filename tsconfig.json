@@ -5,7 +5,7 @@
     "noImplicitAny": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "module": "es6",
+    "module": "esnext",
     "esModuleInterop": true,
     "target": "es6",
     "lib": [

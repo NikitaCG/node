@@ -23,6 +23,7 @@ module.exports = (env, options) => {
       extensions: [".ts", ".tsx", ".js", ".json", ".css"],
       alias: {
         Containers: path.resolve(__dirname, 'src/Containers/'),
+        actions: path.resolve(__dirname, 'src/actions/'),
       }
     },
     module: {
