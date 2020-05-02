@@ -8,7 +8,7 @@ const {
   deleteTodo
 } = require('./handlers');
 
-const api = (server) =>{
+const api = (server) => {
   server
     .use(bodyParser.json())
     .get('/api/setup', setupData)

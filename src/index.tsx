@@ -23,8 +23,8 @@ const ProviderTemplate: React.FC = () => (
 );
 
 ReactDOM.render(
-    <ProviderTemplate />,
-    document.getElementById('app'),
+  <ProviderTemplate />,
+  document.getElementById('app'),
 );
 
 if ((module).hot ){

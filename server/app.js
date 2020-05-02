@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const { getDbConnection } = require('../config');
-
 const api = require('./api');
 const { headers } = require('./middleware');
 
@@ -14,8 +13,7 @@ server
   .use(express.static(__dirname + '/public'))
   .use(headers);
 
-mongoose.connect(getDbConnection(),
-  {
+mongoose.connect(getDbConnection(), {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });

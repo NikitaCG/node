@@ -106,7 +106,6 @@ module.exports = (env, options) => {
       new webpack.HotModuleReplacementPlugin(),
       new CleanWebpackPlugin(["dist"]),
       new CopyWebpackPlugin([
-
         {
           from: "./src/favicon.ico",
           to: "./favicon.ico",

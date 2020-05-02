@@ -1,5 +1,8 @@
 const Todos = require('../models/todoModel');
 
+/**
+ * ручка для инициализации базы
+ */
 const setupData = (req, res) => {
   const initialTodos = [{
     username: "test",
@@ -13,6 +16,9 @@ const setupData = (req, res) => {
   });
 };
 
+/**
+ * ручка для получения списка todo
+ */
 const getTodos = (req, res) => {
   const { params } = req;
 
@@ -28,6 +34,9 @@ const getTodos = (req, res) => {
   });
 };
 
+/**
+ *  ручка для получения todo
+ */
 const getTodo = (req, res) => {
   const { params } = req;
 
@@ -46,8 +55,11 @@ const getTodo = (req, res) => {
   });
 };
 
+/**
+ * ручка для создания и обновления todo
+ */
 const postTodo = (req, res) => {
-  const { 
+  const {
     body: {
       id,
       todo,
@@ -68,14 +80,12 @@ const postTodo = (req, res) => {
       res.send('Success');
     })
   } else {
-    const newTodo = Todo.create({
+    Todos.create({
       username: 'test',
       todo,
       isDone,
       hasAttachment,
-    });
-
-    newTodo.save((err) => {
+    },(err) => {
       if (err) throw err;
 
       res.send('Success');
@@ -83,6 +93,9 @@ const postTodo = (req, res) => {
   }
 }
 
+/**
+ * ручка для удаления todo
+ */
 const deleteTodo = (req, res) => {
   Todos.findByIdAndDelete(req.body.id, (err) => {
     if (err) throw err;

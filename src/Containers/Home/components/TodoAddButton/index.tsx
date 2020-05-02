@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import s from './style.css';
 
+/**
+ * Кнопка создания нового todo
+ */
 const TodoAddButton: React.FC = () => (
   <Link to="/create/">
     <div className={s.addContainer}>

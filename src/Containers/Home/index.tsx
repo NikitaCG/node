@@ -22,6 +22,12 @@ type HomeProps = {
   loadTodos: () => void,
 };
 
+/**
+ * Главная страница
+ * 
+ * @param todosInfo - список todo
+ * @param loadTodos - функция загрузки todo для пользователя
+ */
 const Home: React.FC<HomeProps> = ({
   todosInfo,
   loadTodos,

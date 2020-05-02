@@ -1,3 +1,10 @@
+/**
+ * 
+ * @param api - апи для запроса
+ * @param method - метод запроса
+ * @param path - адрес ручки
+ * @param body - тело запроса
+ */
 export const getData = ({
   api,
   method,
@@ -9,6 +16,9 @@ export const getData = ({
   const request: Promise<any> = fetch(requestUrl, {
     method,
     mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(body),
   }).then((response: any) => {
     if (response.status === 404) {

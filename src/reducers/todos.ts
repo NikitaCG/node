@@ -8,6 +8,7 @@ export const CHANGE_TODO_NAME = 'CHANGE_TODO_NAME';
 export const CHANGE_TODO_IS_DONE = 'CHANGE_TODO_IS_DONE';
 export const CHANGE_TODO_HAS_ATTACHMENT = 'CHANGE_TODO_HAS_ATTACHMENT';
 export const INITIAL_CREATE_TODO = 'INITIAL_CREATE_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
 
 type ActionType = {
   type: typeof GET_TODOS
@@ -15,7 +16,8 @@ type ActionType = {
     | typeof CHANGE_TODO_NAME
     | typeof CHANGE_TODO_IS_DONE
     | typeof CHANGE_TODO_HAS_ATTACHMENT
-    | typeof INITIAL_CREATE_TODO,
+    | typeof INITIAL_CREATE_TODO
+    | typeof DELETE_TODO,
   data: TodoInfo[],
 } & Action;
 
@@ -26,6 +28,14 @@ export default function todos(state = initialState, action: ActionType) {
         ...state,
         todosInfo: [
           ...action.data,
+        ],
+      }; 
+      
+    case DELETE_TODO:
+      return {
+        ...state,
+        todosInfo: [
+          ...state.todosInfo.filter((todo) => todo.id !== action.data),
         ],
       };
 
@@ -44,7 +54,6 @@ export default function todos(state = initialState, action: ActionType) {
           ...initialState.todo,
         },
       };
-
 
     case CHANGE_TODO_NAME:
       return {
