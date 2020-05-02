@@ -18,6 +18,10 @@ const Router: React.FC = () => (
         path="/todo/:id"
         component={(props: any) => <TodoPage {...props} />}
       />
+      <Route
+        path="/create"
+        component={(props: any) => <TodoPage {...props} />}
+      />
     </Switch>
   </Suspense>
 );

@@ -6,6 +6,7 @@ import {
   CHANGE_TODO_HAS_ATTACHMENT,
   CHANGE_TODO_IS_DONE,
   CHANGE_TODO_NAME,
+  INITIAL_CREATE_TODO,
 } from '../reducers/todos';
 
 export const changeTodoName = (
@@ -25,3 +26,7 @@ export const changeTodoHasAttachment = (
 ): any => async (
   dispatch: Store['dispatch'],
 ) => dispatch({ type: CHANGE_TODO_HAS_ATTACHMENT, data: todoHasAttachment});
+
+export const initialCreateTodo = (): any => async (
+  dispatch: Store['dispatch'],
+) => dispatch({ type: INITIAL_CREATE_TODO});
